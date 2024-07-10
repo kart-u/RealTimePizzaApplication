@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Pizza</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css" >
+    <link rel="stylesheet" href="/css/app.css">
+
+    <!-- as we have mentioned our static folder to server now all the files rendered through it can automatically take file from that folder -->
+    <!-- thats why we did /css/app.css  -->
+</head>
+<body>
+<nav class="container mx-auto flex items-center justify-between py-4">
+    <div>
+        <a href="/"><img src="/images/logo.png" alt="logo"></a>
+    </div>
+    <div>
+        <ul class="flex items-center">
+            <li class="ml-6"><a href="/">Menu</a></li>
+            <li class="ml-6"><a href="#">Offers</a></li>
+            <% if (user) { %>
+            <% if(user.role==="admin") {%>
+            <li class="ml-6"><a href="/admin/order">Orders</a></li> 
+            <% }else{ %>
+            <li class="ml-6"><a href="/customers/order">Orders</a></li>   
+            <% } %>
+            <li class="ml-6"><a id="logout" href="/logout">Log Out</a></li>
+
+            <% } else { %>
+            <li class="ml-6"><a href="/register">Register</a></li>
+            <li class="ml-6"><a href="/login">Login</a></li>
+            <% } %>
+            <% if (user) { %>
+            <li class="ml-6"><a href="/cart" class="flex"><img src="/images/cart.png" style="height:20px; width:auto;"><p id="cart-items"><%=session.cart.totalQuantity%></p></a></li>
+            <% } else { %>
+            <li class="ml-6"><a href="/cart" class="flex"><img src="/images/cart.png" style="height:20px; width:auto;"></a></li>
+            <% } %>
+        </ul>
+    </div>
+</nav>
+<%-body%>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>

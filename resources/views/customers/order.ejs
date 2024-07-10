@@ -1,0 +1,51 @@
+<section class="orders">
+    <div class="container pt-12 mx-auto">
+        <h1 class="font-bold text-lg mb-4">All Orders</h1>
+        <% if (messages.success) { %>
+         
+            <div id="success-alert" class="flex items-center bg-green-500 text-white text-sm font-bold px-4 py-3"
+                role="alert">
+                <p>Order placed successfully</p>
+            </div>
+        <% } %>
+
+
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">
+                            Orders
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Address
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Time
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for( let i = 0; i < data.length; i++ ) { %>
+                        <tr
+                        class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <a href="/customers/order/<%=data[i]._id%>" class="link">
+                                <%=data[i]._id%> 
+                            </a>
+                        </th>
+                        <td class="px-6 py-4">
+                            <%= data[i].address %>
+                        </td>
+                        <td class="px-6 py-4">
+                            <%= moment(data[i].createdAt).format("hh:mm A")%>
+                        </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</section>

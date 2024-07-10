@@ -1,0 +1,111 @@
+body {
+  font-family: "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #232323;
+}
+
+nav li a {
+  transition: all 0.3s ease-in-out;
+}
+nav li a:hover {
+  color: #FF5733;
+}
+
+section.hero {
+  background-color: #F8F8F8;
+}
+
+section button.btn-primary {
+  background-color: #FF5733;
+  color: #FFF;
+  border: 2px solid #FF5733;
+  padding: 0.5rem 1rem;
+}
+section button.btn-primary:hover {
+  border-color: #b23301;
+  background-color: #b23301;
+}
+
+.size {
+  background-color: #F8F8F8;
+}
+
+.add-to-cart {
+  border: 2px solid #FF5733;
+  color: #FF5733;
+  transition: all 0.3s ease-in-out;
+}
+.add-to-cart:hover {
+  background-color: #FF5733;
+  color: #FFF;
+  border-color: #FFF;
+}
+
+.cart {
+  background-color: #F8F8F8;
+}
+
+.status {
+  min-height: 100vh;
+}
+
+.statusbox {
+  padding: 60px 0 0;
+}
+
+.statusbox ul li span {
+  position: relative;
+  padding-left: 20px;
+}
+
+.statusbox ul li span:after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  background: #232323;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  color: inherit;
+}
+
+.statusbox ul li {
+  position: relative;
+}
+
+.statusbox ul li :before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -6px;
+  width: 2px;
+  height: 89px;
+  background: #232323;
+  margin-top: 10px;
+}
+
+.last :before {
+  display: none;
+}
+
+.status ul .stepcompleted :before {
+  background: gray;
+}
+
+.statusbox ul .stepcompleted span:after {
+  background: gray;
+}
+
+.stepcompleted {
+  color: gray;
+}
+
+.current {
+  color: #FF5733;
+}
+
+.statusbox ul .current span:after {
+  background: #FF5733;
+}

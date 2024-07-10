@@ -1,0 +1,37 @@
+
+    
+    <section class="hero py-16">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="w-1/2">
+                <h6 class="text-lg"><em>Are you Hungry?</em></h6>
+                <h1 class="text-6xl font-bold">Don't wait !</h1>
+                <button class="rounded-full mt-6 btn-primary"><a href="#">Order Now</a></button>
+            </div>
+            <div class="w-1/2">
+                <img src="/images/hero-pizza.png">
+            </div>
+        </div>
+    </section>
+    <section class="menu py-4">
+        <div class="container mx-auto">
+            <h1 class="text-xl font-bold mb-4">All Pizzas</h1>
+            <div class="container mx-auto grid grid-cols-4 gap-y-16">
+                <% for( let i = 0; i < pizza.length; i++ ) { %>
+                    <div class="w-64 text-center">
+                    <img class="h-40 mx-auto mb-4" src="/images/<%=pizza[i].image%>">
+                    <div>
+                        <h2 class="mb-2 text-lg"><%=pizza[i].name%></h2>
+                        <span class="py-1 px-4 rounded-full uppercase text-xs size"><%= pizza[i].size %></span>
+                        <div class="flex items-center justify-around mt-3">
+                            <span class="font-bold text-lg">$<%=pizza[i].price %></span>
+                            <button data="<%= JSON.stringify(pizza[i]) %>"  class="flex add-to-cart py-1 px-6 rounded-full font-bold">
+                                <span>+</span>
+                                <span class="ml-2">Add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </section>

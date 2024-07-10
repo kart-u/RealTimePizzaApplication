@@ -1,0 +1,105 @@
+@import "./variable.scss";
+
+
+
+body{
+    font-family: 'Lato',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    color: $dark;
+
+}
+nav li a{
+    transition:$transition;
+    &:hover{
+        color: $primary;
+    }
+}
+
+section.hero{
+    background-color: $secondary;
+}
+
+section button.btn-primary{
+    background-color: $primary;
+    color: $pure;
+    border:2px solid $primary;
+    padding: 0.5rem 1rem;
+    &:hover{
+        border-color: $primary-hover;
+        background-color: $primary-hover;
+    }
+}
+
+.size{
+    background-color: $secondary;
+}
+
+.add-to-cart{
+    border: 2px solid $primary;
+    color: $primary;
+    transition: $transition;
+    &:hover{
+        background-color: $primary;
+        color: $pure;
+        border-color: $pure;
+    }
+}
+
+.cart{
+    background-color: $secondary;
+}
+.status{
+    min-height: 100vh;
+}
+.statusbox{
+    padding: 60px 0 0 ;
+}
+
+.statusbox ul li span{
+    position: relative;
+    padding-left: 20px;
+}
+.statusbox ul li span:after{
+    content: '';
+    position: absolute;
+    left: -10px;
+    top:50%;
+    background: $dark;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    color: inherit;
+}
+.statusbox ul li{
+    position: relative;
+}
+.statusbox ul li :before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -6px;
+    width: 2px;
+    height: 89px;
+    background: $dark;
+    margin-top: 10px;
+}
+.last :before{
+    display: none;
+}
+
+.status ul .stepcompleted :before{
+    background: gray;
+}
+.statusbox ul .stepcompleted span:after{
+    background: gray;
+}
+.stepcompleted{
+    color: gray;
+}
+.current{
+    color: $primary;
+}
+.statusbox ul .current span:after{
+    background:$primary;
+}

@@ -1,0 +1,70 @@
+<section class="bg-gray-lighter min-h-screen flex flex-col cart">
+    <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+        <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full max-w-md">
+            <form class="w-full" method="post" action="/register">
+                <h1 class="mb-8 text-3xl text-center">Sign up</h1>
+                <input 
+                    type="text"
+                    class="block border border-gray-light w-full p-3 rounded mb-4"
+                    name="name"
+                    placeholder="Full Name" 
+                    id="name"
+                    />
+
+                <input 
+                    type="text"
+                    class="block border border-gray-light w-full p-3 rounded mb-4"
+                    name="email"
+                    placeholder="Email" 
+                    id="email"
+                    />
+
+                <input 
+                    type="password"
+                    class="block border border-gray-light w-full p-3 rounded mb-4"
+                    name="password"
+                    placeholder="Password" 
+                    id="password"
+                    />
+
+                <input 
+                    type="password"
+                    class="block border border-gray-light w-full p-3 rounded mb-4"
+                    name="confirmPassword"
+                    placeholder="Confirm Password"
+                    id="confirm-password"
+                    style="margin-bottom: 0;"
+                    />
+                    <% if (messages.err) { %>                        
+                        <div style="color: red;margin-top:0;margin-bottom: 6px;" id="hidden">
+                            <%=messages.err%>
+                        </div>                     
+                    <% } %>
+                    <div style="color: red;margin-top:0;margin-bottom: 6px; display: none;" id="hidden">
+                        
+                    </div>
+
+                <div>
+                    <button type="submit" class="rounded-full mt-6 btn-primary w-full" id="sign-up">Sign Up</button>
+                </div>
+            </form>
+
+            <div class="text-center text-sm text-gray-dark mt-4">
+                By signing up, you agree to the 
+                <a class="no-underline border-b border-gray-dark text-gray-dark" href="#">
+                    Terms of Service
+                </a> and 
+                <a class="no-underline border-b border-gray-dark text-gray-dark" href="#">
+                    Privacy Policy
+                </a>
+            </div>
+        </div>
+
+        <div class="text-gray-dark mt-6 text-center">
+            Already have an account? 
+            <a class="no-underline border-b border-blue text-blue" href="/login">
+                Log in
+            </a>.
+        </div>
+    </div>
+</section>
